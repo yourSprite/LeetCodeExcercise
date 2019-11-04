@@ -6,10 +6,10 @@
 
 class Solution:
     def minMoves(self, nums: List[int]) -> int:
-        # nums.sort()
-        sorted(nums)
+        nums.sort()
         count = 0
-        n = len(nums)
-        for i in range(n):
-            count += nums[n - 1] - nums[i]
+        n = len(nums) - 1
+        while n >= 0:
+            count += nums[n] - nums[0]
+            n -= 1
         return count
